@@ -1,6 +1,24 @@
 .listening-bar {
     bottom: 0;
+    display: flex;
     width: 100%;
+    height: 97px;
     position: fixed;
     z-index: 1;
+    background-color: #023a02;
+    align-items: center;
 }
+
+.listening-bar-container {
+    display: flex;
+    width: 100%;
+    margin: auto 30px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.volume-bar {
+    width: 300px;
+}
+
