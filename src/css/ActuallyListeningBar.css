@@ -23,3 +23,32 @@
     width: 200px;
 }
 
+.controller-menu {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.song-progress-bar {
+    width: 200px;
+}
+
+.controller-menu .buttons a {
+    color: #b3b3b3;
+}
+
+.play-pause-button {
+    font-size: 2.2rem;
+}
+
+.controller-menu .buttons a:hover {
+    color: white;
+    scale: 105%;
+}
+
+.controller-menu .buttons a:active {
+    color: #c5c5c5;
+    scale: 95%;
+}
