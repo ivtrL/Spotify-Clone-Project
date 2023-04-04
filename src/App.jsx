@@ -11,10 +11,10 @@ function App() {
     <div>
       <Login/>
       <Navbar/>
-      <Playlists/>
-      <ActuallyListeningBar/>
       <Profile/>
       <Home/>
+      <Playlists/>
+      <ActuallyListeningBar/>
     </div>
   )
 }

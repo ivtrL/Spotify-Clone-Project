@@ -2,6 +2,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: calc(100vh - 370px);
-    
+    background-color: #121212;
+    height: calc(100vh - 90px);
+    width: calc(100vw - 250px);
 }
