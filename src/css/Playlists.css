@@ -2,7 +2,7 @@
     position: fixed;
     width: 250px;
     min-height: 230px;
-    height: 560px;
+    height: calc(100vh - 370px);
     background-color: black;
     left: 0;
     top: 280px;
