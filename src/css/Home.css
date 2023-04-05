@@ -1,8 +1,84 @@
 .home {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #121212;
-    height: calc(100vh - 90px);
-    width: calc(100vw - 250px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    -10deg,
+    rgba(18, 18, 18, 1) 0% 40%,
+    rgba(61, 61, 61, 1) 80%,
+    rgba(76, 24, 240, 0.6) 100%
+  );
+  height: calc(100vh - 90px);
+  width: calc(100vw - 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container {
+  position: relative;
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(2, 200px);
+  width: 90%;
+  height: calc(80% - 100px);
+  margin: auto;
+  z-index: 1;
+}
+
+.home-container .button {
+  padding: 0;
+  justify-content: space-between;
+  background-color: #282828;
+  width: 320px;
+  height: 120px;
+}
+
+.home-container .button:hover {
+  background-color: #3d3d3d;
+  transition: all ease 0.6s;
+}
+
+.home-container .button .icon-heart {
+  display: flex;
+  color: var(--text-color);
+  background: linear-gradient(
+    to left top,
+    rgba(179, 214, 207, 0.8),
+    rgba(76, 24, 240, 0.8)
+  );
+  transition: all ease 0.6s;
+  padding: 3px;
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 2.25rem;
+}
+
+.home-container .button:hover .icon-heart {
+  display: flex;
+  color: var(--text-color);
+  background: linear-gradient(
+    to left top,
+    rgba(179, 214, 207, 1),
+    rgba(76, 24, 240, 1)
+  );
+  transition: all ease 0.6s;
+  padding: 3px;
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 2.25rem;
+}
+
+.home-container .button .button-text {
+  margin-right: 20px;
 }

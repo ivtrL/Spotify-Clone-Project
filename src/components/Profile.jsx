@@ -13,6 +13,8 @@ import IconButton from '@mui/material/IconButton'
 import Avatar from '@mui/material/Avatar'
 import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 
 const Profile = () => {
 
@@ -53,6 +55,7 @@ const Profile = () => {
             <div className='profile'>
               <Avatar className='profile-icon' sx={{ width: 24, height: 24 }} />
               <span>vtrL</span>
+              <span className='arrow-icon'>{open ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
             </div>
           </IconButton>
         </Tooltip>

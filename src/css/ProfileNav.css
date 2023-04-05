@@ -1,55 +1,55 @@
 .profile-nav {
-    position: fixed;
-    display: flex;
-    top: 0;
-    right: 0;
-    background-color: #1d0d46;
-    width: calc(100vw - 250px);
-    height: 60px;
-    z-index: 1;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  width: calc(100vw - 250px);
+  height: 60px;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-nav-container {
-    width: 80%;
-    height: 100%;
-    display: inherit;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0px auto;
+  width: 80%;
+  height: 100%;
+  display: inherit;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px auto;
 }
 
-.profile-nav-container .buttons a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f1f1f1;
-    border-radius: 20px;
-    background-color: black;
-    scale: 140%;
+.profile-nav-container .buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  border-radius: 20px;
+  background-color: black;
+  scale: 140%;
 }
 
 .profile {
-    display: flex;
-    column-gap: 10px;
-    align-items: center;
-    background-color: #080413;
-    border-radius: 20px;
-    color: white;
-    width: 95px;
-    height: 30px;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  background-color: #080413;
+  border-radius: 20px;
+  color: white;
+  width: 95px;
+  height: 30px;
 }
 
 .profile-icon {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
-.profile span{
-    font-size: 0.9rem;
-    font-weight: 600;
+.profile span {
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .popup-text {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
