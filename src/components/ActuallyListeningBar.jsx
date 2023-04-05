@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
 import "../css/ActuallyListeningBar.css"
 import Slider from '@mui/material/Slider'
 import Stack from '@mui/material/Stack'
@@ -6,7 +7,6 @@ import VolumeDownRoundedIcon from '@mui/icons-material/VolumeDownRounded'
 import VolumeUpRoundedIcon from '@mui/icons-material/VolumeUpRounded'
 import VolumeMuteRoundedIcon from '@mui/icons-material/VolumeMuteRounded'
 import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded'
-import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
 import SkipNextIcon from '@mui/icons-material/SkipNext'
 
@@ -50,7 +50,7 @@ const ActuallyListeningBar = () => {
           </Stack>
         </div>
         <div className='volume-bar'>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} alignItems='center'>
             <a href="#" style={{color: 'white'}} onClick={() => {iconMute ? setIconMute(false): setIconMute(true)}}>
               {!iconMute && (value == 0 ? <VolumeMuteRoundedIcon/>: value >= 50 ? <VolumeUpRoundedIcon/>: <VolumeDownRoundedIcon/>)}
               {iconMute && <VolumeOffRoundedIcon/>}

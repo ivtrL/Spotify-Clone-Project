@@ -29,3 +29,27 @@
     background-color: black;
     scale: 140%;
 }
+
+.profile {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    background-color: #080413;
+    border-radius: 20px;
+    color: white;
+    width: 95px;
+    height: 30px;
+}
+
+.profile-icon {
+    margin-left: 5px;
+}
+
+.profile span{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.popup-text {
+    font-size: 0.9rem;
+}
