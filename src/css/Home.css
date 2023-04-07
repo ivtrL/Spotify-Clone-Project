@@ -50,22 +50,28 @@
   }
 }
 
-.home-main .button {
+.home-main-buttons .button {
   display: flex;
-  padding: 0;
+  padding: 0 15px 0 0;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: rgba(43, 42, 46, 0.3);
   width: 100%;
   height: 80px;
 }
 
-.home-main .button:hover {
-  background-color: rgba(66, 66, 66, 0.6);
-  transition: all ease 0.6s;
+.home-main-buttons .button .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.home-main .button .icon-heart {
+.home-main-buttons .button:hover {
+  background-color: rgba(66, 66, 66, 0.6);
+  transition: 0.3s;
+}
+
+.home-main-buttons .button .icon-heart {
   display: flex;
   color: var(--text-color);
   background: linear-gradient(
@@ -73,7 +79,7 @@
     rgba(179, 214, 207, 0.8),
     rgba(76, 24, 240, 0.8)
   );
-  transition: all ease 0.6s;
+  transition: 0.3s;
   padding: 3px;
   width: 80px;
   height: 80px;
@@ -84,7 +90,33 @@
   font-size: 1.5rem;
 }
 
-.home-main .button .button-text {
+.home-main-buttons .button .button-text {
   margin-left: 20px;
   color: white;
+}
+
+.home-main-buttons .button .button-play-icon {
+  display: none;
+  transition: 0.3s;
+}
+
+.home-main-buttons .button:hover .button-play-icon {
+  background-color: #1fdf64;
+  display: flex;
+  border-radius: 25px;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: black;
+}
+
+.home-main-buttons .button .button-play-icon i {
+  scale: 150%;
+}
+
+.home-main-buttons .button .button-play-icon:hover {
+  scale: 105%;
+  transition: 0.3s;
 }

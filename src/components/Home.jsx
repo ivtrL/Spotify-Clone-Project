@@ -1,11 +1,18 @@
 import React from "react";
 import "../css/Home.css";
-import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import { FaHeart } from "react-icons/fa";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const Home = () => {
-  const icons = ["a", "b", "c", "d", "e"];
+  const icons = [
+    ["icon-heart", <FaHeart />, "Músicas Curtidas"],
+    ["icon", "a", "Teste1"],
+    ["icon", "b", "Teste2"],
+    ["icon", "c", "Teste3"],
+    ["icon", "d", "Teste4"],
+    ["icon", "e", "Teste5"],
+  ];
 
   return (
     <div className="home">
@@ -13,31 +20,20 @@ const Home = () => {
         <p> Boa noite</p>
         <div className="home-main">
           <div className="home-main-buttons">
-            <Paper elevation={3} className="button">
-              <Paper elevation={6} className="icon-heart">
-                <i>
-                  <FaHeart />
-                </i>
-              </Paper>
-              <span className="button-text">Músicas Curtidas</span>
-              {/* <Paper>
-                <i>
-                  </>
-                </i>
-              </Paper> */}
-            </Paper>
             {icons.map((item) => {
               return (
                 <Paper elevation={3} className="button">
-                  <Paper elevation={6} className="icon">
-                    <i>{item}</i>
+                  <div className="wrapper">
+                    <Paper elevation={6} className={item[0]}>
+                      <i>{item[1]}</i>
+                    </Paper>
+                    <span className="button-text">{item[2]}</span>
+                  </div>
+                  <Paper elevation={5} className="button-play-icon">
+                    <i>
+                      <PlayArrowIcon />
+                    </i>
                   </Paper>
-                  <span className="button-text">Teste1</span>
-                  {/* <Paper>
-                <i>
-                  </>
-                </i>
-              </Paper> */}
                 </Paper>
               );
             })}
