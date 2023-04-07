@@ -41,6 +41,10 @@
   height: 30px;
 }
 
+.profile:hover {
+  background-color: #282828;
+}
+
 .profile-icon {
   margin-left: 5px;
 }
