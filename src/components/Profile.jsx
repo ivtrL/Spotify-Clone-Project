@@ -30,7 +30,7 @@ const Profile = () => {
   return (
     <div className="profile-nav">
       <div className="profile-nav-container">
-        <Stack className="buttons" spacing={5} direction='row'>
+        <Stack className="buttons" spacing={3} direction='row'>
           <a href="#" className="nav-before">
             <Tooltip title='Voltar'>
             <NavigateBeforeIcon/>

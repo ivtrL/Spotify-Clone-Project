@@ -2,12 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: linear-gradient(
-    -10deg,
-    rgba(18, 18, 18, 1) 0% 40%,
-    rgba(61, 61, 61, 1) 80%,
-    rgba(76, 24, 240, 0.6) 100%
-  );
+  background: linear-gradient(to top, #121212 0% 60%, #1d0d46 100%);
   height: calc(100vh - 90px);
   width: calc(100vw - 250px);
   display: flex;
@@ -17,31 +12,60 @@
 
 .home-container {
   position: relative;
-  display: grid;
   align-items: start;
-  justify-content: center;
-  grid-template-columns: repeat(3, 400px);
-  grid-template-rows: repeat(2, 200px);
-  width: 90%;
-  height: calc(80% - 100px);
+  justify-content: start;
+  width: 95%;
+  height: calc(90% - 100px);
   margin: auto;
   z-index: 1;
 }
 
-.home-container .button {
-  padding: 0;
-  justify-content: space-between;
-  background-color: #282828;
-  width: 320px;
-  height: 120px;
+.home-container p {
+  position: relative;
+  font-size: 1.5rem;
 }
 
-.home-container .button:hover {
-  background-color: #3d3d3d;
+.home-main {
+  position: relative;
+  margin: 30px 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.home-main-buttons {
+  display: grid;
+  row-gap: 15px;
+  column-gap: 20px;
+}
+
+@media screen and (max-width: 1177px) {
+  .home-main-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1178px) {
+  .home-main-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-main .button {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(43, 42, 46, 0.3);
+  width: 100%;
+  height: 80px;
+}
+
+.home-main .button:hover {
+  background-color: rgba(66, 66, 66, 0.6);
   transition: all ease 0.6s;
 }
 
-.home-container .button .icon-heart {
+.home-main .button .icon-heart {
   display: flex;
   color: var(--text-color);
   background: linear-gradient(
@@ -51,34 +75,16 @@
   );
   transition: all ease 0.6s;
   padding: 3px;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   justify-content: center;
   align-items: center;
   margin-right: 5px;
   border-radius: 3px;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
 }
 
-.home-container .button:hover .icon-heart {
-  display: flex;
-  color: var(--text-color);
-  background: linear-gradient(
-    to left top,
-    rgba(179, 214, 207, 1),
-    rgba(76, 24, 240, 1)
-  );
-  transition: all ease 0.6s;
-  padding: 3px;
-  width: 120px;
-  height: 120px;
-  justify-content: center;
-  align-items: center;
-  margin-right: 5px;
-  border-radius: 3px;
-  font-size: 2.25rem;
-}
-
-.home-container .button .button-text {
-  margin-right: 20px;
+.home-main .button .button-text {
+  margin-left: 20px;
+  color: white;
 }
