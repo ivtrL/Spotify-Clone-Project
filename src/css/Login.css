@@ -1,0 +1,41 @@
+.login {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login img {
+  scale: 60%;
+  position: inherit;
+}
+
+.login a {
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #1fdf64;
+  padding: 20px;
+  border-radius: 50px;
+  position: inherit;
+  width: 400px;
+  height: 100px;
+  font-size: 2rem;
+  transition: 0.1s;
+}
+
+.login a:hover {
+  scale: 105%;
+  transition: 0.1s;
+}
+
+.login a:active {
+  scale: 100%;
+  background-color: rgba(31, 223, 100, 0.8);
+  transition: 0.1s;
+}

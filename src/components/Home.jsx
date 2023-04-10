@@ -20,23 +20,27 @@ const Home = () => {
         <p> Boa noite</p>
         <div className="home-main">
           <div className="home-main-buttons">
-            {icons.map((item) => {
-              return (
-                <Paper elevation={3} className="button">
-                  <div className="wrapper">
-                    <Paper elevation={6} className={item[0]}>
-                      <i>{item[1]}</i>
+            <ul>
+              {icons.map((item) => {
+                return (
+                  <li key={"item " + icons.findIndex(item)}>
+                    <Paper elevation={3} className="button">
+                      <div className="wrapper">
+                        <Paper elevation={6} className={item[0]}>
+                          <i>{item[1]}</i>
+                        </Paper>
+                        <span className="button-text">{item[2]}</span>
+                      </div>
+                      <Paper elevation={5} className="button-play-icon">
+                        <i>
+                          <PlayArrowIcon />
+                        </i>
+                      </Paper>
                     </Paper>
-                    <span className="button-text">{item[2]}</span>
-                  </div>
-                  <Paper elevation={5} className="button-play-icon">
-                    <i>
-                      <PlayArrowIcon />
-                    </i>
-                  </Paper>
-                </Paper>
-              );
-            })}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
