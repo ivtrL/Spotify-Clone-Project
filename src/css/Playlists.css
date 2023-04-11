@@ -1,11 +1,9 @@
 .playlists {
-  position: fixed;
+  position: relative;
   width: 250px;
   min-height: 230px;
-  height: calc(100vh - 370px);
+  height: calc(100% - 280px);
   background-color: black;
-  left: 0;
-  top: 280px;
   overflow-y: auto;
 }
 

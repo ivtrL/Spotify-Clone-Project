@@ -5,14 +5,14 @@ import { FaHeart } from "react-icons/fa";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const Home = () => {
-  const icons = [
-    ["icon-heart", <FaHeart />, "Músicas Curtidas"],
-    ["icon", "a", "Teste1"],
-    ["icon", "b", "Teste2"],
-    ["icon", "c", "Teste3"],
-    ["icon", "d", "Teste4"],
-    ["icon", "e", "Teste5"],
-  ];
+  // const icons = [
+  //   ["icon-heart", <FaHeart />, "Músicas Curtidas"],
+  //   ["icon", "a", "Teste1"],
+  //   ["icon", "b", "Teste2"],
+  //   ["icon", "c", "Teste3"],
+  //   ["icon", "d", "Teste4"],
+  //   ["icon", "e", "Teste5"],
+  // ];
 
   return (
     <div className="home">
@@ -20,27 +20,25 @@ const Home = () => {
         <p> Boa noite</p>
         <div className="home-main">
           <div className="home-main-buttons">
-            <ul>
-              {icons.map((item) => {
-                return (
-                  <li key={"item " + icons.findIndex(item)}>
-                    <Paper elevation={3} className="button">
-                      <div className="wrapper">
-                        <Paper elevation={6} className={item[0]}>
-                          <i>{item[1]}</i>
-                        </Paper>
-                        <span className="button-text">{item[2]}</span>
-                      </div>
-                      <Paper elevation={5} className="button-play-icon">
-                        <i>
-                          <PlayArrowIcon />
-                        </i>
+            {/* <ul>
+              {icons.map((item) => (
+                <li key={"item " + icons.findIndex(item)}>
+                  <Paper elevation={3} className="button">
+                    <div className="wrapper">
+                      <Paper elevation={6} className={item[0]}>
+                        <i>{item[1]}</i>
                       </Paper>
+                      <span className="button-text">{item[2]}</span>
+                    </div>
+                    <Paper elevation={5} className="button-play-icon">
+                      <i>
+                        <PlayArrowIcon />
+                      </i>
                     </Paper>
-                  </li>
-                );
-              })}
-            </ul>
+                  </Paper>
+                </li>
+              ))}
+            </ul> */}
           </div>
         </div>
       </div>
