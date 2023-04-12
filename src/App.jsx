@@ -1,8 +1,3 @@
-import ActuallyListeningBar from "./components/ActuallyListeningBar";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import Playlists from "./components/Playlists";
-import Profile from "./components/Profile";
 import Login from "./components/Login";
 import { useEffect } from "react";
 import { getTokenFromUrl } from "./pages/AuthProvider";
@@ -13,7 +8,7 @@ import Player from "./pages/Player";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -32,11 +27,14 @@ function App() {
           user: user,
         });
       });
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
+      });
     }
   }, []);
-
-  console.log("TOKEN 👉 ", token);
-  console.log("USER 👉 ", user);
 
   return (
     <div className="app">

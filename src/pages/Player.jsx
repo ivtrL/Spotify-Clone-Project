@@ -1,14 +1,14 @@
 import React from "react";
-import Profile from "../components/Profile";
 import Home from "../components/Home";
 import ActuallyListeningBar from "../components/ActuallyListeningBar";
 import Sidebar from "../components/Sidebar";
+import Homebar from "../components/Homebar";
 
 const Player = ({ spotify }) => {
   return (
     <div className="main">
       <Sidebar />
-      <Profile />
+      <Homebar spotify={spotify} />
       <Home />
       <ActuallyListeningBar />
     </div>

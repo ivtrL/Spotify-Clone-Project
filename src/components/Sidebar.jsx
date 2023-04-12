@@ -5,11 +5,11 @@ import "../css/Sidebar.css";
 import Navbar from "./Navbar";
 import Playlists from "./Playlists";
 
-const Sidebar = () => {
+const Sidebar = ({ playlists }) => {
   return (
     <div className="sidebar">
       <Navbar />
-      <Playlists />
+      <Playlists playlists={playlists} />
     </div>
   );
 };
