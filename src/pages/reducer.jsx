@@ -4,6 +4,8 @@ export const initialState = {
   playing: false,
   item: null,
   token: null,
+  actualPlaylist: null,
+  actualPlaylistImage: null,
 };
 
 const reducer = (state, action) => {
@@ -26,6 +28,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlists: action.playlists,
+      };
+
+    case "SET_ACTUAL_PLAYLIST":
+      return {
+        ...state,
+        actualPlaylist: action.actualPlaylist,
+        actualPlaylistImage: action.actualPlaylistImage,
       };
 
     default:

@@ -1,5 +1,5 @@
 .login {
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -10,7 +10,7 @@
 }
 
 .login img {
-  scale: 60%;
+  scale: 30%;
   position: inherit;
 }
 
@@ -38,4 +38,7 @@
   scale: 100%;
   background-color: rgba(31, 223, 100, 0.8);
   transition: 0.1s;
+}
+
+@media screen and (min-width) {
 }

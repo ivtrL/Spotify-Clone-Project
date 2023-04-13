@@ -12,9 +12,16 @@ const Playlists = () => {
           {playlists?.items?.map((playlist) => {
             return (
               <a
-                key={`item ${playlists?.items?.indexOf(playlist)}`}
+                key={`item ${playlists?.items?.indexOf(playlist) + 1}`}
                 href="#"
                 className="playlist-name"
+                onClick={() => {
+                  dispatch({
+                    type: "SET_ACTUAL_PLAYLIST",
+                    actualPlaylist: playlist.id,
+                    actualPlaylistImage: playlist.images[0].url,
+                  });
+                }}
               >
                 {playlist.name}
               </a>
