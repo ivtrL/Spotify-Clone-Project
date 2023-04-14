@@ -1,31 +1,44 @@
 import React, { useEffect } from "react";
-import "../css/Home.css";
+import "../css/DisplayActualPlaylist.css";
 import { useDataLayerValue } from "../pages/DataLayer";
 
 const DisplayActualPlaylist = ({ spotify }) => {
-  const [{ actualPlaylist }, dispatch] = useDataLayerValue();
-  let playlist = [];
+  const [{ actualPlaylist, actualPlaylistImage }, dispatch] =
+    useDataLayerValue();
   useEffect(() => {
-    spotify.getPlaylist(actualPlaylist).then((playlistItems) => {
-      playlist = playlistItems;
-    });
+    return;
   }, []);
-
   return (
-    <div className="home">
-      <div className="home-container">
-        <div className="home-main">
+    <div className="display-playlist">
+      <div className="display-playlist-container">
+        <div className="display-playlist-main">
           <ul>
-            {playlist?.tracks?.map((track) => {
+            {actualPlaylist?.tracks?.items?.map((trackObject) => {
               return (
-                <li key={`track ${track.track_number}`}>
+                <li
+                  key={`track ${
+                    actualPlaylist.tracks.items.indexOf(trackObject) + 1
+                  }`}
+                >
                   <a href="#" className="track">
-                    <span className="track-number">{track.track_number}</span>
-                    <img src={track.album.images.url} alt={track.name} />
-                    <span className="track-title">{track.name}</span>
-                    <span className="track-album">{track.name}</span>
-                    <span className="track-addedin">{track.added_at}</span>
-                    <span className="track-time">{track.name}</span>
+                    <span className="track-number">
+                      {actualPlaylist.tracks.items.indexOf(trackObject) + 1}
+                    </span>
+                    <img
+                      src={trackObject.track.album.images[0].url}
+                      alt={trackObject.track.name}
+                      className="track-img"
+                    />
+                    <span className="track-title">
+                      {trackObject.track.name}
+                    </span>
+                    <span className="track-album">
+                      {trackObject.track.album.name}
+                    </span>
+                    <span className="track-addedin">
+                      {trackObject.added_at}
+                    </span>
+                    <span className="track-time">{trackObject.name}</span>
                   </a>
                 </li>
               );

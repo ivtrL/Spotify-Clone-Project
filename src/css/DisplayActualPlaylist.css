@@ -1,0 +1,67 @@
+.display-playlist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to top, #121212 0% 60%, #1d0d46 100%);
+  height: fit-content;
+  width: calc(100vw - 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-playlist-container {
+  position: relative;
+  align-items: start;
+  justify-content: start;
+  width: 95%;
+  height: fit-content;
+  margin: auto;
+  z-index: 1;
+}
+
+.display-playlist p {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.display-playlist-main {
+  position: relative;
+  margin: 30px 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.track {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  color: white;
+  padding: 0 30px;
+}
+
+.track:hover {
+  background-color: rgba(42, 42, 42, 0.6);
+}
+
+.track-img {
+  width: 40px;
+  height: 40px;
+}
+
+.track-album {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.track-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

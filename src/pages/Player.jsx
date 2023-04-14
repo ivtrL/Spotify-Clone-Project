@@ -11,7 +11,7 @@ const Player = ({ spotify }) => {
 
   return (
     <div className="main">
-      <Sidebar />
+      <Sidebar spotify={spotify} />
       <Homebar />
       {/* <Home /> */}
       {actualPlaylist ? <DisplayActualPlaylist spotify={spotify} /> : <Home />}

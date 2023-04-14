@@ -2,7 +2,7 @@ import React from "react";
 import "../css/Playlists.css";
 import { useDataLayerValue } from "../pages/DataLayer";
 
-const Playlists = () => {
+const Playlists = ({ spotify }) => {
   const [{ playlists }, dispatch] = useDataLayerValue();
 
   return (
@@ -16,10 +16,12 @@ const Playlists = () => {
                 href="#"
                 className="playlist-name"
                 onClick={() => {
-                  dispatch({
-                    type: "SET_ACTUAL_PLAYLIST",
-                    actualPlaylist: playlist.id,
-                    actualPlaylistImage: playlist.images[0].url,
+                  spotify.getPlaylist(playlist.id).then((playlistItems) => {
+                    dispatch({
+                      type: "SET_ACTUAL_PLAYLIST",
+                      actualPlaylist: playlistItems,
+                      actualPlaylistImage: playlist.images[0].url,
+                    });
                   });
                 }}
               >
