@@ -4,7 +4,7 @@ export const initialState = {
   playing: false,
   item: null,
   token: null,
-  actualPlaylist: {},
+  actualPlaylist: null,
   actualPlaylistImage: null,
 };
 

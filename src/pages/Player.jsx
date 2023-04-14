@@ -13,7 +13,6 @@ const Player = ({ spotify }) => {
     <div className="main">
       <Sidebar spotify={spotify} />
       <Homebar />
-      {/* <Home /> */}
       {actualPlaylist ? <DisplayActualPlaylist spotify={spotify} /> : <Home />}
       <ActuallyListeningBar />
     </div>
