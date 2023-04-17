@@ -13,7 +13,7 @@ const DisplayActualPlaylist = ({ spotify }) => {
   return (
     <div className="display-playlist">
       <div className="display-playlist-container">
-        <div className="display-playlist-main">
+        <div className="display-playlist-tracks">
           <ul>
             {actualPlaylist?.tracks?.items?.map((trackObject) => {
               const min = Math.floor(
@@ -22,42 +22,7 @@ const DisplayActualPlaylist = ({ spotify }) => {
               const sec = Math.floor(
                 (trackObject.track.duration_ms / 1000) % 60
               );
-
-              const timeConverted = () => {
-                const x = trackObject.added_at;
-                const y = x.split("-").reduce((initial, item) => {
-                  let parts = item.split(":");
-                  parts.forEach((part) => {
-                    initial += part;
-                  });
-                  return initial;
-                }, "");
-                const z = y.split("T").reduce((initial, item) => {
-                  let parts = item.split("Z");
-                  parts.forEach((part) => {
-                    initial += part;
-                  });
-                  return initial;
-                }, "");
-
-                return [
-                  parseInt(z[0] + z[1] + z[2] + z[3]),
-                  parseInt(z[4] + z[5]),
-                  parseInt(z[6] + z[7]),
-                  parseInt(z[8] + z[9]),
-                  parseInt(z[10] + z[11]),
-                  parseInt(z[12] + z[13]),
-                ];
-              };
-              const g2 = new Date(
-                timeConverted[0],
-                timeConverted[1],
-                timeConverted[2],
-                timeConverted[3],
-                timeConverted[4],
-                timeConverted[5]
-              );
-              console.log(g2.getFullYear());
+              const g2 = new Date(trackObject.added_at);
 
               return (
                 <li
@@ -109,7 +74,9 @@ const DisplayActualPlaylist = ({ spotify }) => {
                         ? "há 1 ano"
                         : `há ${g1.getFullYear() - g2.getFullYear()} anos`}
                     </span>
-                    <span className="track-time">{`${min}:${sec}`}</span>
+                    <span className="track-time">{`${min}:${sec
+                      .toString()
+                      .padStart(2, "0")}`}</span>
                   </a>
                 </li>
               );

@@ -3,7 +3,8 @@
   top: 0;
   right: 0;
   background: linear-gradient(to top, #121212 0% 90%, #1d0d46 100%);
-  height: fit-content;
+  min-height: calc(100vh - 90px);
+  height: min-content;
   width: calc(100vw - 250px);
   display: flex;
   align-items: center;
@@ -15,8 +16,8 @@
   align-items: start;
   justify-content: start;
   width: 95%;
-  height: fit-content;
   margin: auto;
+  margin-bottom: 100px;
   z-index: 1;
 }
 
@@ -25,11 +26,10 @@
   font-size: 1.5rem;
 }
 
-.display-playlist-main {
+.display-playlist-tracks {
   position: relative;
   margin: 30px 0;
   width: 100%;
-  height: fit-content;
 }
 
 .track {
