@@ -6,6 +6,8 @@ export const initialState = {
   token: null,
   actualPlaylist: null,
   actualPlaylistImage: null,
+  likedMusics: null,
+  likedMusicsActive: false,
 };
 
 const reducer = (state, action) => {
@@ -33,6 +35,18 @@ const reducer = (state, action) => {
         ...state,
         actualPlaylist: action.actualPlaylist,
         actualPlaylistImage: action.actualPlaylistImage,
+      };
+
+    case "SET_LIKED_MUSICS":
+      return {
+        ...state,
+        likedMusics: action.likedMusics,
+      };
+
+    case "SET_LIKED_MUSICS_ACTIVE":
+      return {
+        ...state,
+        likedMusicsActive: action.likedMusicsActive,
       };
 
     default:

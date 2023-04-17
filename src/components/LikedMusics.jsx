@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
-import "../css/DisplayActualPlaylist.css";
+import React from "react";
 import { useDataLayerValue } from "../pages/DataLayer";
 
-const DisplayActualPlaylist = ({ spotify }) => {
-  const [{ actualPlaylist, actualPlaylistImage }, dispatch] =
-    useDataLayerValue();
+const LikedMusics = () => {
+  const [{ likedMusics }, dispatch] = useDataLayerValue();
   const g1 = new Date();
 
   return (
@@ -12,7 +10,7 @@ const DisplayActualPlaylist = ({ spotify }) => {
       <div className="display-playlist-container">
         <div className="display-playlist-tracks">
           <ul>
-            {actualPlaylist?.tracks?.items?.map((trackObject) => {
+            {likedMusics?.tracks?.items?.map((trackObject) => {
               const min = Math.floor(
                 (trackObject.track.duration_ms / 1000 / 60) << 0
               );
@@ -24,12 +22,12 @@ const DisplayActualPlaylist = ({ spotify }) => {
               return (
                 <li
                   key={`track ${
-                    actualPlaylist.tracks.items.indexOf(trackObject) + 1
+                    likedMusics.tracks.items.indexOf(trackObject) + 1
                   }`}
                 >
                   <a href="#" className="track">
                     <span className="track-number">
-                      {actualPlaylist.tracks.items.indexOf(trackObject) + 1}
+                      {likedMusics.tracks.items.indexOf(trackObject) + 1}
                     </span>
                     <img
                       src={trackObject.track.album.images[0].url}
@@ -85,4 +83,4 @@ const DisplayActualPlaylist = ({ spotify }) => {
   );
 };
 
-export default DisplayActualPlaylist;
+export default LikedMusics;
