@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: linear-gradient(to top, #121212 0% 90%, #1d0d46 100%);
+  background-color: #121212;
   min-height: calc(100vh - 90px);
   height: min-content;
   width: calc(100vw - 250px);
@@ -13,12 +13,12 @@
 
 .display-playlist-container {
   position: relative;
+  display: flex;
   align-items: start;
   justify-content: start;
-  width: 95%;
-  margin: auto;
+  width: 100%;
   margin-bottom: 100px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .display-playlist p {
@@ -26,10 +26,19 @@
   font-size: 1.5rem;
 }
 
+.background-fade {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 100%),
+    var(--background-noise);
+  height: 232px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
 .display-playlist-tracks {
   position: relative;
-  margin: 30px 0;
-  width: 100%;
+  margin: 90px auto;
+  width: 95%;
 }
 
 .track {

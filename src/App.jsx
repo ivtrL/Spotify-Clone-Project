@@ -33,6 +33,12 @@ function App() {
           playlists: playlists,
         });
       });
+      spotify.getMySavedTracks().then((tracks) => {
+        dispatch({
+          type: "SET_LIKED_MUSICS",
+          likedMusics: tracks,
+        });
+      });
     }
   }, []);
 

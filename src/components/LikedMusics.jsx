@@ -1,16 +1,21 @@
 import React from "react";
 import { useDataLayerValue } from "../pages/DataLayer";
+import "../css/LikedMusics.css";
 
 const LikedMusics = () => {
   const [{ likedMusics }, dispatch] = useDataLayerValue();
   const g1 = new Date();
 
   return (
-    <div className="display-playlist">
-      <div className="display-playlist-container">
-        <div className="display-playlist-tracks">
+    <div className="liked-musics">
+      <div className="liked-musics-container">
+        <div
+          class="background-fade"
+          style={{ backgroundColor: "rgb(80, 56, 160)" }}
+        ></div>
+        <div className="liked-musics-tracks">
           <ul>
-            {likedMusics?.tracks?.items?.map((trackObject) => {
+            {likedMusics?.items?.map((trackObject) => {
               const min = Math.floor(
                 (trackObject.track.duration_ms / 1000 / 60) << 0
               );
@@ -20,14 +25,10 @@ const LikedMusics = () => {
               const g2 = new Date(trackObject.added_at);
 
               return (
-                <li
-                  key={`track ${
-                    likedMusics.tracks.items.indexOf(trackObject) + 1
-                  }`}
-                >
+                <li key={`track ${likedMusics.items.indexOf(trackObject) + 1}`}>
                   <a href="#" className="track">
                     <span className="track-number">
-                      {likedMusics.tracks.items.indexOf(trackObject) + 1}
+                      {likedMusics.items.indexOf(trackObject) + 1}
                     </span>
                     <img
                       src={trackObject.track.album.images[0].url}

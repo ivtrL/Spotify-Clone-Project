@@ -6,9 +6,10 @@ import { IoLibraryOutline, IoLibrarySharp } from "react-icons/io5";
 import { RiSearch2Line, RiSearch2Fill } from "react-icons/ri";
 import "../css/Navbar.css";
 import { useDataLayerValue } from "../pages/DataLayer";
+import LikedMusics from "./LikedMusics";
 
 const Navbar = () => {
-  const [{ actualPlaylist }, dispatch] = useDataLayerValue();
+  const [{ actualPlaylist, likedMusicsActive }, dispatch] = useDataLayerValue();
   const [iconChange, setIconChange] = useState({
     icon1: true,
     icon2: false,
@@ -22,19 +23,29 @@ const Navbar = () => {
           <a
             href="#"
             className={`nav-link ${
-              !actualPlaylist && iconChange.icon1 && "active-link"
+              !actualPlaylist &&
+              !likedMusicsActive &&
+              iconChange.icon1 &&
+              "active-link"
             }`}
             onClick={() => {
               setIconChange({ icon1: true, icon2: false, icon3: false });
-              dispatch({
-                type: "SET_ACTUAL_PLAYLIST",
-                actualPlaylist: null,
-                actualPlaylistImage: null,
-              });
+              likedMusicsActive
+                ? dispatch({
+                    type: "SET_LIKED_MUSICS_ACTIVE",
+                    likedMusicsActive: false,
+                  })
+                : actualPlaylist
+                ? dispatch({
+                    type: "SET_ACTUAL_PLAYLIST",
+                    actualPlaylist: null,
+                    actualPlaylistImage: null,
+                  })
+                : null;
             }}
           >
             <i className="nav-icon">
-              {!actualPlaylist && iconChange.icon1 ? (
+              {!actualPlaylist && !likedMusicsActive && iconChange.icon1 ? (
                 <RiHome5Fill />
               ) : (
                 <RiHome5Line />
@@ -45,14 +56,17 @@ const Navbar = () => {
           <a
             href="#"
             className={`nav-link ${
-              !actualPlaylist && iconChange.icon2 && "active-link"
+              !actualPlaylist &&
+              !likedMusicsActive &&
+              iconChange.icon2 &&
+              "active-link"
             }`}
             onClick={() =>
               setIconChange({ icon1: false, icon2: true, icon3: false })
             }
           >
             <i className="nav-icon">
-              {!actualPlaylist && iconChange.icon2 ? (
+              {!actualPlaylist && !likedMusicsActive && iconChange.icon2 ? (
                 <RiSearch2Fill />
               ) : (
                 <RiSearch2Line />
@@ -63,14 +77,17 @@ const Navbar = () => {
           <a
             href="#"
             className={`nav-link ${
-              !actualPlaylist && iconChange.icon3 && "active-link"
+              !actualPlaylist &&
+              !likedMusicsActive &&
+              iconChange.icon3 &&
+              "active-link"
             }`}
             onClick={() =>
               setIconChange({ icon1: false, icon2: false, icon3: true })
             }
           >
             <i className="nav-icon">
-              {!actualPlaylist && iconChange.icon3 ? (
+              {!actualPlaylist && !likedMusicsActive && iconChange.icon3 ? (
                 <IoLibrarySharp />
               ) : (
                 <IoLibraryOutline />
@@ -90,7 +107,19 @@ const Navbar = () => {
             <i className="nav-icon-heart">
               <FaHeart />
             </i>
-            <span className="nav-name">Músicas Curtidas</span>
+            <span
+              className={`nav-name ${likedMusicsActive && "active-link"}`}
+              onClick={() => {
+                !likedMusicsActive
+                  ? dispatch({
+                      type: "SET_LIKED_MUSICS_ACTIVE",
+                      likedMusicsActive: true,
+                    })
+                  : null;
+              }}
+            >
+              Músicas Curtidas
+            </span>
           </a>
         </div>
       </div>

@@ -10,6 +10,10 @@ const DisplayActualPlaylist = ({ spotify }) => {
   return (
     <div className="display-playlist">
       <div className="display-playlist-container">
+        <div
+          class="background-fade"
+          style={{ backgroundColor: "rgb(80, 56, 160)" }}
+        ></div>
         <div className="display-playlist-tracks">
           <ul>
             {actualPlaylist?.tracks?.items?.map((trackObject) => {
