@@ -17,6 +17,24 @@ const DisplayActualPlaylist = ({ spotify }) => {
           <Paper className="playlist-img" elevation={24} square>
             <img src={actualPlaylistImage} alt="playlist.png" />
           </Paper>
+          <div className="playlist-tags">
+            <span>Playlist</span>
+            <h1 className="playlist-title">{actualPlaylist?.name}</h1>
+            {actualPlaylist?.description ? (
+              <p className="playlist-description">
+                {actualPlaylist.description}
+              </p>
+            ) : null}
+            <div className="playlist-tag-etc">
+              <span className="playlist-owner-name">
+                {actualPlaylist?.owner?.display_name}
+              </span>
+              {actualPlaylist?.followers?.total > 0 ? (
+                <span className="playlist-tag">{`${actualPlaylist?.followers?.total} curtidas`}</span>
+              ) : null}
+              <span className="playlist-tag">{`${actualPlaylist?.tracks?.total} músicas`}</span>
+            </div>
+          </div>
         </div>
         <div className="display-playlist-main">
           <div
@@ -29,9 +47,9 @@ const DisplayActualPlaylist = ({ spotify }) => {
               <span className="title">Título</span>
               <span className="album">Álbum</span>
               <span className="added-at">Adicionada em</span>
-              <span className="duration">
+              <i className="duration">
                 <BiTime />
-              </span>
+              </i>
               <Divider light />
             </div>
             <div className="display-playlist-tracks">
@@ -55,17 +73,17 @@ const DisplayActualPlaylist = ({ spotify }) => {
                         <span className="track-number">
                           {actualPlaylist.tracks.items.indexOf(trackObject) + 1}
                         </span>
-                        <div className="track-title">
+                        <a className="track-title">
                           <img
                             src={trackObject.track.album.images[0].url}
                             alt={trackObject.track.name}
                             className="track-img"
                           />
                           <span>{trackObject.track.name}</span>
-                        </div>
-                        <span className="track-album">
-                          {trackObject.track.album.name}
-                        </span>
+                        </a>
+                        <a href="#" className="track-album">
+                          <span>{trackObject.track.album.name}</span>
+                        </a>
                         <span className="track-addedin">
                           {g1.getTime() == g2.getTime()
                             ? "agora"
