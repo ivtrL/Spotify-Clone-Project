@@ -3,7 +3,7 @@ import "../css/Playlists.css";
 import { useDataLayerValue } from "../pages/DataLayer";
 
 const Playlists = ({ spotify }) => {
-  const [{ playlists }, dispatch] = useDataLayerValue();
+  const [{ playlists, likedMusicsActive }, dispatch] = useDataLayerValue();
 
   return (
     <div className="playlists">
@@ -16,6 +16,12 @@ const Playlists = ({ spotify }) => {
                 href="#"
                 className="playlist-name"
                 onClick={() => {
+                  likedMusicsActive
+                    ? dispatch({
+                        type: "SET_LIKED_MUSICS_ACTIVE",
+                        likedMusicsActive: false,
+                      })
+                    : null;
                   spotify.getPlaylist(playlist.id).then((playlistItems) => {
                     dispatch({
                       type: "SET_ACTUAL_PLAYLIST",
