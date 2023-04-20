@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/DisplayActualPlaylist.css";
-import { useDataLayerValue } from "../pages/DataLayer";
+import { useDataLayerValue } from "../Auth/DataLayer";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
-import { BiTime } from "react-icons/bi";
+import { BiTime, BiPlay } from "react-icons/bi";
 
 const LikedMusics = () => {
   const [{ likedMusics, user }, dispatch] = useDataLayerValue();
@@ -61,6 +61,7 @@ const LikedMusics = () => {
                     (trackObject.track.duration_ms / 1000) % 60
                   );
                   const g2 = new Date(trackObject.added_at);
+                  const [Hovering, setHovering] = useState(false);
 
                   return (
                     <li
@@ -68,9 +69,24 @@ const LikedMusics = () => {
                         likedMusics.items.indexOf(trackObject) + 1
                       }`}
                     >
-                      <a href="#" className="track">
+                      <a
+                        href="#"
+                        className="track"
+                        onMouseEnter={() => {
+                          setHovering(true);
+                        }}
+                        onMouseLeave={() => {
+                          setHovering(false);
+                        }}
+                      >
                         <span className="track-number">
-                          {likedMusics.items.indexOf(trackObject) + 1}
+                          {Hovering ? (
+                            <i style={{ fontSize: "1.2rem" }}>
+                              <BiPlay />
+                            </i>
+                          ) : (
+                            likedMusics.items.indexOf(trackObject) + 1
+                          )}
                         </span>
                         <a className="track-title">
                           <img

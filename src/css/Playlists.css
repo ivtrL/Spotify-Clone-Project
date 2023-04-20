@@ -4,7 +4,7 @@
   min-height: 230px;
   height: calc(100% - 280px);
   background-color: black;
-  overflow-y: auto;
+  overflow-y: overlay;
 }
 
 .playlists-container {

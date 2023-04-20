@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import { useDataLayerValue } from "../pages/DataLayer";
+import { useDataLayerValue } from "../Auth/DataLayer";
 
 const Homebar = () => {
   const [anchorEl, setAnchorEl] = useState(null);

@@ -5,7 +5,7 @@ import { RiHome5Fill, RiHome5Line } from "react-icons/ri";
 import { IoLibraryOutline, IoLibrarySharp } from "react-icons/io5";
 import { RiSearch2Line, RiSearch2Fill } from "react-icons/ri";
 import "../css/Navbar.css";
-import { useDataLayerValue } from "../pages/DataLayer";
+import { useDataLayerValue } from "../Auth/DataLayer";
 import LikedMusics from "./LikedMusics";
 
 const Navbar = () => {
@@ -35,7 +35,8 @@ const Navbar = () => {
                     type: "SET_LIKED_MUSICS_ACTIVE",
                     likedMusicsActive: false,
                   })
-                : actualPlaylist
+                : null;
+              actualPlaylist
                 ? dispatch({
                     type: "SET_ACTUAL_PLAYLIST",
                     actualPlaylist: null,

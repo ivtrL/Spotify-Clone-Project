@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Playlists.css";
-import { useDataLayerValue } from "../pages/DataLayer";
+import { useDataLayerValue } from "../Auth/DataLayer";
 
 const Playlists = ({ spotify }) => {
   const [{ playlists, likedMusicsActive }, dispatch] = useDataLayerValue();

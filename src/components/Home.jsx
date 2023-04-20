@@ -3,7 +3,7 @@ import "../css/Home.css";
 import Paper from "@mui/material/Paper";
 import { FaHeart } from "react-icons/fa";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { useDataLayerValue } from "../pages/DataLayer";
+import { useDataLayerValue } from "../Auth/DataLayer";
 
 const Home = () => {
   const [, dispatch] = useDataLayerValue();

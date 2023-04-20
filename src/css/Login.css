@@ -10,7 +10,7 @@
 }
 
 .login img {
-  scale: 30%;
+  scale: 20%;
   position: inherit;
 }
 
@@ -38,7 +38,4 @@
   scale: 100%;
   background-color: rgba(31, 223, 100, 0.8);
   transition: 0.1s;
-}
-
-@media screen and (min-width) {
 }
